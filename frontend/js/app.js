@@ -456,6 +456,7 @@ async function render(){
 window.render = render; // used by the "Jaribu Tena" retry button
 
 /* ---------------- form / list handlers per view ---------------- */
+
 function attachHandlers(route){
   if(route === 'mchango-mpya'){
     document.getElementById('form-mchango').addEventListener('submit', async e=>{
@@ -550,6 +551,26 @@ function attachHandlers(route){
     });
   }
 
+  if(route === 'maombi'){
+    appEl.querySelectorAll('.btn-approve-malipo').forEach(btn=>{
+      btn.addEventListener('click', async e=>{
+        const id = e.target.closest('.list-item').dataset.id;
+        try{ await Store.approveMalipo(id); showToast('Mchango umeidhinishwa'); await render(); }
+        catch(err){ showToast(err.message || 'Imeshindwa kuidhinisha'); }
+      });
+    });
+    appEl.querySelectorAll('.btn-del-malipo').forEach(btn=>{
+      btn.addEventListener('click', async e=>{
+        const id = e.target.closest('.list-item').dataset.id;
+        const ok = await confirmModal('Kataa Ombi', 'Una uhakika unataka kukataa/kufuta ombi hili la mchango?');
+        if(ok){
+          try{ await Store.deleteMalipo(id); showToast('Ombi limefutwa'); await render(); }
+          catch(err){ showToast(err.message || 'Imeshindwa kufuta'); }
+        }
+      });
+    });
+  }
+
   if(route === 'settings'){
     document.getElementById('form-settings').addEventListener('submit', async e=>{
       e.preventDefault();
@@ -586,5 +607,3 @@ window.addEventListener('DOMContentLoaded', async ()=>{
   await bootstrap();
   await render();
 });
-
-   

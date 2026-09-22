@@ -149,7 +149,7 @@ function formHtml() {
           class="btn btn-primary btn-block"
           type="submit"
         >
-          ✅ Nimetoa
+          ✅ Naahidi kutoa niweke kwenye mkeka
         </button>
 
       </form>

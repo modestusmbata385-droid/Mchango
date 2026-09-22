@@ -96,4 +96,4 @@ cachedSettings.sarafu + ' ' + val.toLocaleString('en-US');
 };
 
 window.Store = Store;
-   
+

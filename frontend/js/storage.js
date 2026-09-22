@@ -91,41 +91,7 @@ const Store = {
     return apiFetch(`/mchango/${MCHANGO_ID}/malipo`, {
       method: 'POST',
       body: JSON.stringify({ mshirikiId, kiasi: Number(kiasi) || 0, tarehe, njia, maelezo })
-    });
-  },
-  async deleteMalipo(id) {
-    await apiFetch(`/malipo/${id}`, { method: 'DELETE' });
-  },
-
-  // ---------- Mkeka (ledger view) ----------
-  async mkeka() {
-    return apiFetch(`/mchango/${MCHANGO_ID}/mkeka`);
-  },
-
-  // ---------- Dashboard summary ----------
-  async summary() {
-    return apiFetch(`/mchango/${MCHANGO_ID}/summary`);
-  },
-
-  // ---------- Settings ----------
-  async getSettings() {
-    const s = await apiFetch(`/mchango/${MCHANGO_ID}/settings`);
-    cachedSettings = { sarafu: s.sarafu || 'TSh', mchangoWasii: s.mchango_wasii || '' };
-    return cachedSettings;
-  },
-  async updateSettings(patch) {
-    const s = await apiFetch(`/mchango/${MCHANGO_ID}/settings`, {
-      method: 'PATCH',
-      body: JSON.stringify(patch)
-    });
-    cachedSettings = { sarafu: s.sarafu || 'TSh', mchangoWasii: s.mchango_wasii || '' };
-    return cachedSettings;
-  },
-
-  // ---------- Utilities ----------
-  formatMoney(n) {
-    const val = Math.round(Number(n) || 0);
-    return cachedSettings.sarafu + ' ' + val.toLocaleString('en-US');
+cachedSettings.sarafu + ' ' + val.toLocaleString('en-US');
   }
 };
 

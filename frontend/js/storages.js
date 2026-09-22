@@ -6,7 +6,7 @@
    use `await Store.xxx()`.
    ========================================================= */
 
-const API_BASE = 'https://mchango-backend-47ur.onrender.com';
+const API_BASE = 'https://mchango-backend-47ur.onrender.com/api';
 const MCHANGO_ID = 1; // single-event app: always the first (and only) mchango row
 
 let cachedSettings = { sarafu: 'TSh', mchangoWasii: '' };

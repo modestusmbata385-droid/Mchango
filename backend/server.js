@@ -7,6 +7,7 @@ const mchangoRoutes = require('./routes/mchango');
 const gharamaRoutes = require('./routes/gharama');
 const washirikiRoutes = require('./routes/washiriki');
 const malipoRoutes = require('./routes/malipo');
+const clickpesaRoutes = require('./routes/clickpesa');
 const settingsRoutes = require('./routes/settings');
 
 const app = express();
@@ -22,6 +23,7 @@ app.use('/api', mchangoRoutes);
 app.use('/api', gharamaRoutes);
 app.use('/api', washirikiRoutes);
 app.use('/api', malipoRoutes);
+app.use('/api', clickpesaRoutes);
 app.use('/api', settingsRoutes);
 
 // Once you're ready to host frontend + backend together on Render,

@@ -638,6 +638,32 @@ document.getElementById('modal-scrim').addEventListener('click', e=>{
 });
 
 window.addEventListener('hashchange', render);
+/* ---------- theme (dark/light) ---------- */
+function applyTheme(theme){
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('mchango_theme', theme);
+
+  const btn = document.getElementById('btn-theme');
+
+  if(btn){
+    btn.textContent = theme === 'light' ? '🌙' : '☀️';
+  }
+}
+
+function toggleTheme(){
+  const current =
+    document.documentElement.getAttribute('data-theme') || 'dark';
+
+  applyTheme(current === 'light' ? 'dark' : 'light');
+}
+
+applyTheme(localStorage.getItem('mchango_theme') || 'dark');
+
+const themeButton = document.getElementById('btn-theme');
+
+if(themeButton){
+  themeButton.addEventListener('click', toggleTheme);
+}
 window.addEventListener('DOMContentLoaded', async ()=>{
   await bootstrap();
   await render();

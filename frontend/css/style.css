@@ -288,3 +288,30 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 @media (prefers-reduced-motion: reduce){
   *{ transition:none !important; animation:none !important; }
 }
+/* ---------- Light mode ---------- */
+:root[data-theme="light"]{
+  --ink:#F3EFE6;
+  --ink-2:#EAE3D3;
+  --surface:#FFFFFF;
+  --surface-2:#F6F1E7;
+  --gold:#A9820F;
+  --gold-soft:#8C6A0C;
+  --maroon:#8C2F39;
+  --maroon-soft:#6E232B;
+  --paper:#16262B;
+  --paper-dim:#5B6B69;
+  --line: rgba(18,36,43,0.14);
+  --shadow: 0 14px 34px rgba(0,0,0,0.10);
+  color-scheme: light;
+}
+:root[data-theme="light"] body{
+  background: radial-gradient(120% 140% at 15% -10%, #FFFFFF 0%, var(--ink) 46%, var(--ink-2) 100%);
+}
+
+/* ---------- Theme toggle button ---------- */
+.theme-toggle{
+  width:42px; height:42px; border-radius:50%;
+  border:1px solid var(--line); background: var(--surface);
+  color: var(--paper); display:flex; align-items:center; justify-content:center;
+  cursor:pointer; font-size:18px;
+}

@@ -1,34 +1,57 @@
 <!DOCTYPE html>
 <html lang="sw">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Toa Mchango — MCHANGO</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤝</text></svg>" />
-<link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <title>Toa Mchango — MCHANGO</title>
+
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤝</text></svg>"
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
+
   <div id="app">
 
     <div class="topbar" style="justify-content:center;">
-      <div class="brand">
-  <span class="mark">MCHANGO</span>
-</div>
 
-<button class="theme-toggle" id="btn-theme" aria-label="Badilisha mwanga" style="position:absolute;right:20px;">🌙</button>1
+      <div class="brand">
+        <span class="mark">MCHANGO</span>
       </div>
-  </div>
+
+      <button
+        class="theme-toggle"
+        id="btn-theme"
+        aria-label="Badilisha mwanga"
+        style="position:absolute;right:20px;"
+      >
+        🌙
+      </button>
+
+    </div>
 
     <main id="toa-main" style="padding:4px 20px 60px;">
-      <div class="empty-state"><span class="emoji">⏳</span><p>Inapakia...</p></div>
+      <div class="empty-state">
+        <span class="emoji">⏳</span>
+        <p>Inapakia...</p>
+      </div>
     </main>
 
-    <footer class="tagline">MCHANGO · toa mchango wako kwa urahisi</footer>
+    <footer class="tagline">
+      MCHANGO · toa mchango wako kwa urahisi
+    </footer>
+
   </div>
 
   <div class="toast" id="toast"></div>
 
   <script src="js/storage.js"></script>
   <script src="js/toa.js"></script>
+
 </body>
 </html>

@@ -547,6 +547,29 @@ async function loadPage() {
 
 window.loadPage = loadPage;
 
+function applyTheme(theme){
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('mchango_theme', theme);
+
+  const btn = document.getElementById('btn-theme');
+
+  if(btn){
+    btn.textContent = theme === 'light' ? '🌙' : '☀️';
+  }
+}
+
+applyTheme(localStorage.getItem('mchango_theme') || 'dark');
+
+const themeButton = document.getElementById('btn-theme');
+
+if(themeButton){
+  themeButton.addEventListener('click', ()=>{
+    const current =
+      document.documentElement.getAttribute('data-theme') || 'dark';
+
+    applyTheme(current === 'light' ? 'dark' : 'light');
+  });
+}
 
 /* =========================================================
    START PAGE

@@ -104,6 +104,16 @@ const Store = {
       body: JSON.stringify({ jina, simu, kiasi: Number(kiasi) || 0, njia, maelezo })
     });
   },
+   async payWithClickPesa({ jina, simu, kiasi }) {
+  return apiFetch(`/mchango/${MCHANGO_ID}/malipo/clickpesa`, {
+    method: 'POST',
+    body: JSON.stringify({
+      jina,
+      simu,
+      kiasi: Number(kiasi) || 0
+    })
+  });
+},
   async approveMalipo(id) {
     return apiFetch(`/malipo/${id}/approve`, { method: 'PATCH' });
   },

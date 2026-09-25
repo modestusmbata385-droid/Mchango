@@ -318,14 +318,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .family-logo-space {
   width: 100%;
   height: 390px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
+  position: relative;
 }
 
 .family-logo {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   display: block;
 }

@@ -40,7 +40,11 @@ CREATE TABLE IF NOT EXISTS malipo (
   status        TEXT NOT NULL DEFAULT 'approved', -- 'approved' (admin/confirmed) or 'pending' (submitted by mtoaji, hajaidhinishwa)
   created_at    TIMESTAMPTZ NOT NULL DEFAULT now()
 );
+ALTER TABLE malipo
+ADD COLUMN IF NOT EXISTS order_reference TEXT UNIQUE;
 
+CREATE INDEX IF NOT EXISTS idx_malipo_order_reference
+ON malipo(order_reference);
 -- Ensures the column exists even on a database created before this feature was added
 ALTER TABLE malipo ADD COLUMN IF NOT EXISTS status TEXT NOT NULL DEFAULT 'approved';
 

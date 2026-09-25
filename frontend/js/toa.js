@@ -438,18 +438,11 @@ async function loadPage() {
         /* ================================================
            SEND CONTRIBUTION TO BACKEND
            ================================================ */
-
-        await Store.submitToa({
-
-          jina: jina,
-
-          kiasi: kiasi,
-
-          simu: simu,
-
-          njia: njia
-
-        });
+         const result = await Store.payWithClickPesa({
+  jina: jina,
+  simu: simu,
+  kiasi: kiasi
+});
 
 
         /* ================================================

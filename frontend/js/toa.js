@@ -438,10 +438,12 @@ async function loadPage() {
         /* ================================================
            SEND CONTRIBUTION TO BACKEND
            ================================================ */
-         const result = await Store.payWithClickPesa({
+         const result = await Store.submitToa({
   jina: jina,
   simu: simu,
-  kiasi: kiasi
+  kiasi: kiasi,
+  njia: njia,
+  maelezo: ''
 });
 
 
